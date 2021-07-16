@@ -22,8 +22,13 @@ buttons.addEventListener('click', (e) => {
         result.innerHTML = "Congrats, You Won!";
         result.classList.toggle('success')
         answer.classList.toggle(String(classes[randomNumber]))
-    } else {
-        result.innerHTML = "Ooops. Try again";
+    } else if (buttonValue === randomNumber){
+        result.innerHTML = "It's draw! Try again!";
+        result.classList.toggle('draw')
+        answer.classList.toggle(String(classes[randomNumber]))
+    }
+     else {
+        result.innerHTML = "Ooops. Try again!";
         result.classList.toggle('failure')
         answer.classList.toggle(String(classes[randomNumber]))
     }
