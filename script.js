@@ -2,6 +2,8 @@ const buttons = document.querySelector('.buttons')
 const button = document.querySelectorAll('button')
 const answer = document.querySelector('.answer')
 const result = document.querySelector('.result')
+const pointsNumber = document.querySelector('span')
+let points = 0
 const classes = ["first", "second", "third"]
 
 buttons.addEventListener('click', (e) => {
@@ -11,14 +13,17 @@ buttons.addEventListener('click', (e) => {
     result.className = "result"
 
     if(buttonValue === 0 && randomNumber === 2){
+        points++;
         result.innerHTML = "Congrats, You Won!";
         result.classList.toggle('success')
         answer.classList.toggle(String(classes[randomNumber]))
     } else if (buttonValue === 1 && randomNumber === 0){
+        points++;
         result.innerHTML = "Congrats, You Won!";
         result.classList.toggle('success')
         answer.classList.toggle(String(classes[randomNumber]))
     } else if (buttonValue === 2 && randomNumber === 1){
+        points++;
         result.innerHTML = "Congrats, You Won!";
         result.classList.toggle('success')
         answer.classList.toggle(String(classes[randomNumber]))
@@ -28,6 +33,7 @@ buttons.addEventListener('click', (e) => {
         answer.classList.toggle(String(classes[randomNumber]))
     }
      else {
+        points--;
         result.innerHTML = "Ooops. Try again!";
         result.classList.toggle('failure')
         answer.classList.toggle(String(classes[randomNumber]))
@@ -50,6 +56,7 @@ buttons.addEventListener('click', (e) => {
             button[0].classList.remove('clicked')
             break;
     }
+    pointsNumber.innerHTML = points
 
 })
 

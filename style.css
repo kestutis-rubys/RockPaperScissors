@@ -65,3 +65,9 @@ img {
 .draw {
   color: blue;
 }
+
+.points {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
