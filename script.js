@@ -12,17 +12,7 @@ buttons.addEventListener('click', (e) => {
     answer.className = "answer"
     result.className = "result"
 
-    if(buttonValue === 0 && randomNumber === 2){
-        points++;
-        result.innerHTML = "Congrats, You Won!";
-        result.classList.toggle('success')
-        answer.classList.toggle(String(classes[randomNumber]))
-    } else if (buttonValue === 1 && randomNumber === 0){
-        points++;
-        result.innerHTML = "Congrats, You Won!";
-        result.classList.toggle('success')
-        answer.classList.toggle(String(classes[randomNumber]))
-    } else if (buttonValue === 2 && randomNumber === 1){
+    if(buttonValue === 0 && randomNumber === 2 || (buttonValue === 1 && randomNumber === 0) || (buttonValue === 2 && randomNumber === 1)){
         points++;
         result.innerHTML = "Congrats, You Won!";
         result.classList.toggle('success')
@@ -56,7 +46,7 @@ buttons.addEventListener('click', (e) => {
             button[0].classList.remove('clicked')
             break;
     }
-    pointsNumber.innerHTML = points
+    pointsNumber.textContent = points
 
 })
 
